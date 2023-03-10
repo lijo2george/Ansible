@@ -1,0 +1,28 @@
+---
+- name: Gather facts from remote hosts
+  hosts: all
+  gather_facts: yes
+  tasks:
+    - name: Display hostname
+      debug:
+        msg: "Hostname is {{ ansible_hostname }}"
+
+    - name: Display operating system
+      debug:
+        msg: "Operating system is {{ ansible_distribution }} {{ ansible_distribution_version }}"
+
+    - name: Display CPU information
+      debug:
+        msg: "CPU is {{ ansible_processor }}"
+
+    - name: Display RAM information
+      debug:
+        msg: "RAM is {{ ansible_memtotal_mb }} MB"
+
+    - name: Display IP address
+      debug:
+        msg: "IP address is {{ ansible_default_ipv4.address }}"
+
+    - name: Display disk space information
+      debug:
+        msg: "Disk space is {{ ansible_mounts[0].size_total|filesize }} with {{ ansible_mounts[0].size_available|filesize }} available"
