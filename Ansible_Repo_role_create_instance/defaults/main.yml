@@ -1,0 +1,9 @@
+---
+# defaults file for Ansible_Repo_role_create_instance
+aws_region: ap-south-1
+aws_instance_type: t2.micro
+aws_ami_id: ami-0d81306eddc614a45
+aws_key_name: Nodes_mumbai
+aws_security_group: sg-09e12792d0951e079
+aws_subnet_id: subnet-0938f7b616934cb98
+aws_tag_name: Node2
